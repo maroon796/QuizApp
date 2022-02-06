@@ -90,5 +90,21 @@ function getAnswer() {
 
 submit.addEventListener('click', () => {
   const answer = getAnswer();
-  console.log(answer);
+
+  if (answer) {
+    if (answer === quizInfo[currentQuiz].correct) {
+      score++;
+    }
+    currentQuiz++;
+
+    if (currentQuiz < quizInfo.length) {
+      loadQuiz();
+    } else {
+      quiz.innerHTML = `
+        <h2>You answered correctly at ${score}/${quizInfo.length} quesions </h2>
+
+        <button onClick="location.reload()">Reload</button>
+      `;
+    }
+  }
 });
