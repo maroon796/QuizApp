@@ -2,21 +2,21 @@
 
 const quizInfo = [
   {
-    question: 'Katerina Sakellaropoulou was elected the first woman President of',
-    a: 'Greece',
-    b: 'Spain',
-    c: 'Finland',
-    d: 'Netherland',
-    correct: 'a',
-  },
-
-  {
     question: 'Which one among the following radiations carries maximum energy?',
     a: 'Ultraviolet rays',
     b: 'Gamma rays',
     c: 'X- rays',
     d: 'Infra-red rays',
     correct: 'b',
+  },
+
+  {
+    question: 'Katerina Sakellaropoulou was elected the first woman President of',
+    a: 'Greece',
+    b: 'Spain',
+    c: 'Finland',
+    d: 'Netherland',
+    correct: 'a',
   },
 
   {
@@ -55,3 +55,18 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
 const submit = document.getElementById('submit');
+
+let currentQuiz = 0;
+let score = 0;
+
+loadQuiz();
+
+function loadQuiz() {
+  const currentQuizData = quizInfo[currentQuiz];
+
+  questionElement.innerText = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
+}
