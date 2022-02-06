@@ -62,6 +62,7 @@ let score = 0;
 loadQuiz();
 
 function loadQuiz() {
+  deselectAnswers();
   const currentQuizData = quizInfo[currentQuiz];
 
   questionElement.innerText = currentQuizData.question;
@@ -69,4 +70,8 @@ function loadQuiz() {
   b_text.innerText = currentQuizData.b;
   c_text.innerText = currentQuizData.c;
   d_text.innerText = currentQuizData.d;
+}
+
+function deselectAnswers() {
+  answerElements.forEach((answerEl) => (answerEl.checked = false));
 }
