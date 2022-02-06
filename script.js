@@ -75,3 +75,20 @@ function loadQuiz() {
 function deselectAnswers() {
   answerElements.forEach((answerEl) => (answerEl.checked = false));
 }
+
+function getAnswer() {
+  let answer;
+
+  answerElements.forEach((answerEl) => {
+    if (answerEl.checked) {
+      answer = answerEl.id;
+    }
+  });
+
+  return answer;
+}
+
+submit.addEventListener('click', () => {
+  const answer = getAnswer();
+  console.log(answer);
+});
